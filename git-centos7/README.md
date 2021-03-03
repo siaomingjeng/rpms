@@ -62,7 +62,7 @@ echo 'Install Finished!**********************************'
 %changelog
 EOF
 ```
-Note: adjust the files above according to "RPM build errors: Installed (but unpackaged) file(s) found".
+Note: adjust the "%files" above according to "RPM build errors: Installed (but unpackaged) file(s) found".
 Remove "Requires:". The dependencies of "perl-Git,perl-Error,perl-TermReadKey" from GIT causes installation issues.
 # Download Source Code:
 ```wget -O rpmbuild/SOURCES/git-2.30.1.tar.gz https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.30.1.tar.gz```
