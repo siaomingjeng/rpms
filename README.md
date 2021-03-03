@@ -10,9 +10,7 @@ All version: https://mirrors.edge.kernel.org/pub/software/scm/git/
 yum -y install epel-release
 yum -y groupinstall "Development Tools"
 yum -y install gettext-devel openssl-devel perl-CPAN perl-devel zlib-devel curl-devel expat-devel gettext-devel perl-ExtUtils-MakeMaker
-yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel
-yum install -y rpm-build
-yum install -y rpmdevtools
+yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel rpm-build rpmdevtools
 ```
 # Verify (general user):
 ```
