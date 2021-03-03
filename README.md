@@ -68,10 +68,10 @@ echo 'Install Finished!**********************************'
 /usr/local/share/locale/is/LC_MESSAGES/git.mo
 /usr/local/share/locale/it/LC_MESSAGES/git.mo
 /usr/local/share/locale/ko/LC_MESSAGES/git.mo
-/usr/local/share/locale/pt_PT/LC_MESSAGES/git.mo
 /usr/local/share/locale/ru/LC_MESSAGES/git.mo
 /usr/local/share/locale/sv/LC_MESSAGES/git.mo
 /usr/local/share/locale/vi/LC_MESSAGES/git.mo
+/usr/local/share/locale/pt_PT/LC_MESSAGES/git.mo
 /usr/local/share/locale/zh_CN/LC_MESSAGES/git.mo
 /usr/local/share/locale/zh_TW/LC_MESSAGES/git.mo
 /usr/local/share/perl5/FromCPAN/Error.pm
