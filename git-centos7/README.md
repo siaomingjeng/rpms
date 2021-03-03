@@ -29,7 +29,7 @@ Group:          Development/Tools
 License:        GPL
 URL:            https://github.com/siaomingjeng
 Source0:        https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.30.1.tar.gz
-Prefix:         /usr/local
+Prefix:         /usr
 
 BuildRequires:  gcc,make
 
@@ -53,29 +53,9 @@ make install DESTDIR=%{buildroot}
 echo 'Install Finished!**********************************'
 
 %files
-/usr/local/bin/git*
-/usr/local/libexec/git*
-/usr/local/share/git*
-/usr/local/share/locale/el/LC_MESSAGES/git.mo
-/usr/local/share/locale/pl/LC_MESSAGES/git.mo
-/usr/local/share/locale/tr/LC_MESSAGES/git.mo
-/usr/local/share/locale/bg/LC_MESSAGES/git.mo
-/usr/local/share/locale/ca/LC_MESSAGES/git.mo
-/usr/local/share/locale/de/LC_MESSAGES/git.mo
-/usr/local/share/locale/es/LC_MESSAGES/git.mo
-/usr/local/share/locale/fr/LC_MESSAGES/git.mo
-/usr/local/share/locale/is/LC_MESSAGES/git.mo
-/usr/local/share/locale/it/LC_MESSAGES/git.mo
-/usr/local/share/locale/ko/LC_MESSAGES/git.mo
-/usr/local/share/locale/ru/LC_MESSAGES/git.mo
-/usr/local/share/locale/sv/LC_MESSAGES/git.mo
-/usr/local/share/locale/vi/LC_MESSAGES/git.mo
-/usr/local/share/locale/pt_PT/LC_MESSAGES/git.mo
-/usr/local/share/locale/zh_CN/LC_MESSAGES/git.mo
-/usr/local/share/locale/zh_TW/LC_MESSAGES/git.mo
-/usr/local/share/perl5/FromCPAN/Error.pm
-/usr/local/share/perl5/FromCPAN/Mail/Address.pm
-/usr/local/share/perl5/Git*
+/usr/bin/*
+/usr/libexec/*
+/usr/share/*
 
 %doc
 
