@@ -88,6 +88,6 @@ Note: adjust the files above according to "RPM build errors: Installed (but unpa
 # Download Source Code:
 ```wget -O rpmbuild/SOURCES/git-2.30.1.tar.gz https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.30.1.tar.gz```
 
-# rpms
+# RPM's
 ```rpmbuild -bb rpmbuild/SPECS/git.spec```
 RPM will be generated in rpmbuild/RPMS
