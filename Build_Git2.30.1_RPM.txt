@@ -1,0 +1,86 @@
+CREATE GIT RPM FOR CENTOS 7  (Raymond ZHENG on 12 APR 2018, updated on 3MAR2021)
+
+
+15DEC2018:   https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.20.1.tar.gz
+08FEB2021:   https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.30.1.tar.gz
+All version: https://mirrors.edge.kernel.org/pub/software/scm/git/
+
+1. 环境及依赖准备(root)：
+yum -y install epel-release
+yum -y groupinstall "Development Tools"
+yum -y install gettext-devel openssl-devel perl-CPAN perl-devel zlib-devel curl-devel expat-devel gettext-devel perl-ExtUtils-MakeMaker
+yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel rpm-build rpmdevtools
+
+2. 回到普通用户（安全考虑）：
+rpmdev-setuptree
+# 验证安装好了
+rpmbuild --showrc | grep topdir
+
+3.
+vi rpmbuild/SPECS/git.spec
+---
+Name:           git
+Version:        2.30.1
+Release:        1%{?dist}
+Summary:        Git created for CentOS 7 by Dr. Raymond.
+
+Group:          Development/Tools
+License:        GPL
+URL:            https://github.com/siaomingjeng
+Source0:        https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.30.1.tar.gz
+Prefix:         /usr
+
+BuildRequires:  gcc,make
+
+
+%description
+This git is built from offical source code 2.30.1 for CentOS 7.
+
+%prep
+%setup -q
+
+
+%build
+echo dist=%{?dist}: _topdir=%{_topdir}: _mandir=%{_mandir}: buildroot=%{buildroot}
+make configure
+%configure
+./configure --prefix=%{prefix} --mandir=%{_mandir} --sysconfdir=/etc
+make %{?_smp_mflags}
+
+%install
+make install DESTDIR=%{buildroot}
+echo 'Install Finished!**********************************'
+
+%files
+/usr/bin/*
+/usr/libexec/*
+/usr/share/*
+
+%doc
+
+%changelog
+---
+
+## 上面的%files 内容 根据RPM build errors: Installed (but unpackaged) file(s) found: 做调整.
+## Remove "Requires:". The dependencies of "perl-Git,perl-Error,perl-TermReadKey" from GIT causes issues in installation.
+4. 下载git source code：
+cd rpmbuild/SOURCES
+wget -O git-2.30.1.tar.gz https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.30.1.tar.gz
+#wget -O git.tar.gz https://codeload.github.com/git/git/tar.gz/v2.17.0
+
+5. rpmbuild -bb rpmbuild/SPECS/git.spec
+
+RPM包会诞生于RPMS目录下。
+
+6. Check dependencies:
+# Just check.
+repoquery --requires <rpm name>
+# To see which packages are needed as dependencies.
+repoquery --requires --resolve <rpm name>
+yum deplist <rpm name>
+rpm -qpR <local rpm>
+
+
+--------------------END-------NOT---------INCLUDE---------------
+
+
