@@ -89,4 +89,5 @@ Note: adjust the files above according to "RPM build errors: Installed (but unpa
 
 # RPM's
 ```rpmbuild -bb rpmbuild/SPECS/git.spec```
+
 RPM will be generated in rpmbuild/RPMS
