@@ -32,6 +32,7 @@ Source0:        https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.30.1.
 Prefix:         /usr
 
 BuildRequires:  gcc,make
+Requires:        apr apr-util neon pakchois perl-CGI perl-Compress-Raw-Bzip2 perl-Compress-Raw-Zlib  perl-DBI perl-Data-Dumper perl-Digest perl-Digest-MD5 perl-FCGI perl-IO-Compress perl-Net-Daemon perl-PlRPC perl-YAML subversion subversion-libs subversion-perl
 
 %description
 This git is built from offical source code 2.30.1 for CentOS 7.
