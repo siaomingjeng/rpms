@@ -44,6 +44,7 @@ This git is built from offical source code 2.30.1 for CentOS 7.
 %build
 echo dist=%{?dist}: _topdir=%{_topdir}: _mandir=%{_mandir}: buildroot=%{buildroot}
 make configure
+
 %configure
 ./configure --prefix=%{prefix} --mandir=%{_mandir} --sysconfdir=/etc
 make %{?_smp_mflags}
