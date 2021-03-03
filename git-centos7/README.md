@@ -73,3 +73,11 @@ These dependencies are installed anyway.
 ```rpmbuild -bb rpmbuild/SPECS/git.spec```
 
 RPM will be generated in rpmbuild/RPMS
+
+# Check Dependencies:
+```
+repoquery --requires <rpm name>
+repoquery --requires --resolve <rpm name> # To see which packages are needed as dependencies.
+yum deplist <rpm name>
+rpm -qpR <local rpm>
+```
