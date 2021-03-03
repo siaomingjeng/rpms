@@ -1,4 +1,4 @@
-CREATE GIT RPM FOR CENTOS 7  (Raymond ZHENG on 12 APR 2018, updated on 03 MAR 2020)
+CREATE GIT RPM FOR CENTOS 7  (Dr. Raymond ZHENG on 12 APR 2018, updated on 03 MAR 2021)
 
 # Source Packages:
 15DEC2018:   https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.20.1.tar.gz
